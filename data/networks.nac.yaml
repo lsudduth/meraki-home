@@ -1,0 +1,41 @@
+meraki:
+  domains:
+    - name: !env domain
+      administrator:
+        name: !env org_admin
+      organizations:
+        - name: !env org
+          networks:
+            - name: !env network_name
+              product_types:
+                - appliance
+                - switch
+                - wireless
+                - camera
+                - sensor
+                - cellularGateway
+              settings:
+                local_status_page_enabled: true
+                remote_status_page: true
+                secure_port: false
+                local_status_page_authentication:
+                  username: admin
+                  password: !env network_password
+                named_vlans: true
+              snmp:
+                access: users
+                # access: community
+                # community_string: publicro
+                users:
+                  - username: cisco
+                    passphrase: !env snmp_password
+              syslog_servers:
+                - host: 1.2.3.4
+                  port: 514
+                  roles:
+                    - Air Marshal events
+                    - Flows
+                    - URLs
+                    - Switch Event log
+                    - Wireless Event log
+                    - Appliance Event log

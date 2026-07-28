@@ -1,0 +1,198 @@
+---
+image: danischm/nac:0.1.4
+stages:
+  - validate
+  - plan
+  - deploy
+  - test
+  - notify
+
+variables:
+  # Disable SSL verification for git operations
+  GIT_SSL_NO_VERIFY: "true"
+
+  MERAKI_API_KEY:
+    description: "Meraki Dashboard API Key"
+  GITLAB_TOKEN:
+    description: "User Access Token. Used to create comments on Merge Requests"
+  TF_HTTP_USERNAME:
+    description: "GitLab Username"
+    value: "gitlab-ci-token"
+  TF_HTTP_PASSWORD:
+    description: "GitLab Access Token"
+    value: "${CI_JOB_TOKEN}"
+  WEBEX_ROOM_ID:
+    description: "Cisco Webex Room ID"
+  WEBEX_TOKEN:
+    description: "Cisco Webex Bot Token"
+  GITLAB_API_URL:
+    description: "GitLab API v4 root URL"
+    value: "${CI_API_V4_URL}"
+  TF_HTTP_ADDRESS:
+    description: "GitLab HTTP Address to store the TF state file"
+    value: "${GITLAB_API_URL}/projects/${CI_PROJECT_ID}/terraform/state/tfstate"
+  TF_HTTP_LOCK_ADDRESS:
+    description: "GitLab HTTP Address to lock the TF state file"
+    value: ${TF_HTTP_ADDRESS}/lock
+  TF_HTTP_LOCK_METHOD:
+    description: "Method to lock TF state file"
+    value: POST
+  TF_HTTP_UNLOCK_ADDRESS:
+    description: "GitLab HTTP Address to unlock the TF state file"
+    value: ${TF_HTTP_ADDRESS}/lock
+  TF_HTTP_UNLOCK_METHOD:
+    description: "Method to unlock TF state file"
+    value: DELETE
+  domain:
+    value: "EMEA"
+    description: "Geographic or organisational domain (e.g. EMEA, AMER, APAC)"
+  org_name:
+    value: "netascode"
+    description: "Cisco Meraki organisation name"
+  org_admin:
+    value: "netascode-admin"
+    description: "Primary Meraki organisation administrator username"
+  org_admin_email:
+    value: "admin@netascode.cisco.com"
+    description: "Email address for the Meraki organisation administrator"
+  network_name:
+    value: "netascode-network-01"
+    description: "Name of the Meraki network to be created or managed"
+  snmp_password:
+    value: "TryH4rd3r!2026"
+    description: "SNMP authentication password for network monitoring"
+  network_password:
+    value: "Bu1ldMore!2026"
+    description: "Administrative or shared network password"
+  wireless_guest_psk:
+    value: "GuestSecurePassword!2026"
+    description: "Pre-shared key for the wireless guest network"
+  radius_accounting_secret:
+    value: "Cisco123!2026"
+    description: "Shared secret for RADIUS accounting server"
+  radius_secret:
+    value: "abc123"
+    description: "Shared secret for RADIUS authentication server"
+cache:
+  key: terraform_modules_and_lock
+  paths:
+    - .terraform
+    - .terraform.lock.hcl
+
+validate:
+  stage: validate
+  script:
+    - set -o pipefail && terraform fmt -check |& tee fmt_output.txt
+    - set -o pipefail && iac-validate ./data/ |& tee validate_output.txt
+  artifacts:
+    paths:
+      - fmt_output.txt
+      - validate_output.txt
+  cache: []
+  rules:
+    - if: $CI_COMMIT_TAG == null
+
+plan:
+  stage: plan
+  resource_group: meraki
+  script:
+    - terraform init -input=false
+    - terraform plan -out=plan.tfplan -input=false
+    - terraform show -no-color plan.tfplan > plan.txt
+    - terraform show -json plan.tfplan | jq > plan.json
+    - terraform show -json plan.tfplan | jq '([.resource_changes[]?.change.actions?]|flatten)|{"create":(map(select(.=="create"))|length),"update":(map(select(.=="update"))|length),"delete":(map(select(.=="delete"))|length)}' > plan_gitlab.json
+    - python3 .ci/gitlab-comment.py
+  artifacts:
+    paths:
+      - plan.json
+      - plan.txt
+      - plan.tfplan
+      - plan_gitlab.json
+    reports:
+      terraform: plan_gitlab.json
+  dependencies: []
+  needs:
+    - validate
+  only:
+    - merge_requests
+    - master
+
+deploy:
+  stage: deploy
+  resource_group: meraki
+  script:
+    - terraform init -input=false
+    - terraform apply -input=false -auto-approve plan.tfplan
+  artifacts:
+    paths:
+      - defaults.yaml
+  dependencies:
+    - plan
+  needs:
+    - plan
+  only:
+    - master
+
+test-integration:
+  stage: test
+  script:
+    - set -o pipefail && iac-test -d ./data -d ./defaults.yaml -t ./tests/templates -o ./tests/results |& tee test_output.txt
+  artifacts:
+    when: always
+    paths:
+      - tests/results/*.html
+      - tests/results/xunit.xml
+      - test_output.txt
+    reports:
+      junit: tests/results/xunit.xml
+  dependencies:
+    - deploy
+  needs:
+    - deploy
+  only:
+    - master
+
+test-idempotency:
+  stage: test
+  resource_group: meraki
+  script:
+    - terraform init -input=false
+    - terraform plan -input=false -detailed-exitcode
+  dependencies:
+    - deploy
+  needs:
+    - deploy
+  only:
+    - master
+
+failure:
+  stage: notify
+  script:
+    - python3 .ci/webex-notification-gitlab.py -f
+  when: on_failure
+  artifacts:
+    when: always
+    paths:
+      - tests/results/*.html
+      - tests/results/xunit.xml
+      - plan.txt
+      - fmt_output.txt
+      - validate_output.txt
+      - test_output.txt
+  cache: []
+
+success:
+  stage: notify
+  script:
+    - python3 .ci/webex-notification-gitlab.py -s
+  when: on_success
+  artifacts:
+    when: always
+    paths:
+      - tests/results/*.html
+      - tests/results/xunit.xml
+      - plan.txt
+      - fmt_output.txt
+      - validate_output.txt
+      - test_output.txt
+  cache: []

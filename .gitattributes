@@ -1,0 +1,2 @@
+Jenkinsfile merge=ours
+data/* merge=ours

@@ -1,0 +1,68 @@
+meraki:
+  domains:
+    - name: !env domain
+      administrator:
+        name: !env org_admin
+      organizations:
+        - name: !env org
+          networks:
+            - name: !env network_name
+              product_types:
+                - appliance
+                - switch
+                - wireless
+                - camera
+                - sensor
+                - cellularGateway
+              wireless:
+                ssids:
+                  - name: CORP
+                    ssid_number: "0"
+                    enabled: true
+                    auth_mode: 8021x-radius
+                    available_on_all_aps: true
+                    default_vlan_id: 666
+                    encryption_mode: wpa-eap
+                    ip_assignment_mode: Bridge mode
+                    lan_isolation: false
+                    mandatory_dhcp: false
+                    use_vlan_tagging: true
+                    splash_page: None
+                    speed_burst: false
+                    visible: true
+                    wpa_encryption_mode: "WPA2 only"
+                    per_client_bandwidth_limit_down: 0
+                    per_client_bandwidth_limit_up: 0
+                    per_ssid_bandwidth_limit_down: 0
+                    per_ssid_bandwidth_limit_up: 0
+                    radius:
+                      accounting_servers:
+                        - host: 10.64.0.230
+                          port: 1813
+                          secret: !env radius_accounting_secret
+                          radsec: false
+                      servers:
+                        - host: 100.64.0.230
+                          secret: !env radius_secret
+                          port: 1812
+                          radsec: false
+                      called_station_id: 00-11-22-33-44-55:AP1
+                      authentication_nas_id: 00-11-22-33-44-55:AP1
+                      server_timeout: 5
+                      server_attempts_limit: 5
+                      accounting_interim_interval: 5
+                      attribute_for_group_policies: Filter-Id
+                      proxy: false
+                      testing: true
+                      coa: true
+                      fallback: true
+                      override: true
+                      accounting: true
+                  - name: Guest
+                    ssid_number: "1"
+                    enabled: true
+                    auth_mode: psk
+                    psk: !env wireless_guest_psk
+                    encryption_mode: wpa
+                    wpa_encryption_mode: WPA2 only
+                    visible: true
