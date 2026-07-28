@@ -1,41 +1,205 @@
+---
 meraki:
   domains:
-    - name: !env domain
+    - name: DOMAIN_NAME
       administrator:
-        name: !env org_admin
+        email: emmsudduth@gmail.com
       organizations:
-        - name: !env org
+        - name: lsudduth@gmail.com
+          managed: false
           networks:
-            - name: !env network_name
+            - name: 142 Mantis
               product_types:
                 - appliance
-                - switch
-                - wireless
                 - camera
                 - sensor
-                - cellularGateway
+                - switch
+                - wireless
+              group_policies:
+                - name: P2Pool
+                  splash_auth_settings: network default
+                  scheduling:
+                    enabled: false
+                    monday:
+                      active: true
+                      from: 00:00
+                      to: 24:00
+                    tuesday:
+                      active: true
+                      from: 00:00
+                      to: 24:00
+                    wednesday:
+                      active: true
+                      from: 00:00
+                      to: 24:00
+                    thursday:
+                      active: true
+                      from: 00:00
+                      to: 24:00
+                    friday:
+                      active: true
+                      from: 00:00
+                      to: 24:00
+                    saturday:
+                      active: true
+                      from: 00:00
+                      to: 24:00
+                    sunday:
+                      active: true
+                      from: 00:00
+                      to: 24:00
+                  bandwidth:
+                    settings: ignore
+                  firewall_and_traffic_shaping:
+                    settings: custom
+                    traffic_shaping_rules:
+                      - dscp_tag_value: 46
+                        pcp_tag_value: 7
+                        priority: normal
+                        definitions:
+                          - type: host
+                            value: any
+                        per_client_bandwidth_limits:
+                          settings: ignore
+                  content_filtering:
+                    allowed_url_patterns:
+                      settings: network default
+                    blocked_url_patterns:
+                      settings: network default
+                    blocked_url_categories:
+                      settings: network default
+                  vlan_tagging:
+                    settings: network default
+                  bonjour_forwarding:
+                    settings: network default
+                - name: Cisco-VPN
+                  splash_auth_settings: network default
+                  scheduling:
+                    enabled: false
+                    monday:
+                      active: true
+                      from: 00:00
+                      to: 24:00
+                    tuesday:
+                      active: true
+                      from: 00:00
+                      to: 24:00
+                    wednesday:
+                      active: true
+                      from: 00:00
+                      to: 24:00
+                    thursday:
+                      active: true
+                      from: 00:00
+                      to: 24:00
+                    friday:
+                      active: true
+                      from: 00:00
+                      to: 24:00
+                    saturday:
+                      active: true
+                      from: 00:00
+                      to: 24:00
+                    sunday:
+                      active: true
+                      from: 00:00
+                      to: 24:00
+                  bandwidth:
+                    settings: ignore
+                  firewall_and_traffic_shaping:
+                    settings: custom
+                    traffic_shaping_rules:
+                      - dscp_tag_value: 46
+                        pcp_tag_value: 7
+                        priority: normal
+                        definitions:
+                          - type: host
+                            value: any
+                        per_client_bandwidth_limits:
+                          settings: ignore
+                  content_filtering:
+                    allowed_url_patterns:
+                      settings: network default
+                    blocked_url_patterns:
+                      settings: network default
+                    blocked_url_categories:
+                      settings: network default
+                  vlan_tagging:
+                    settings: network default
+                  bonjour_forwarding:
+                    settings: network default
+                - name: Default
+                  splash_auth_settings: network default
+                  scheduling:
+                    enabled: false
+                    monday:
+                      active: true
+                      from: 00:00
+                      to: 24:00
+                    tuesday:
+                      active: true
+                      from: 00:00
+                      to: 24:00
+                    wednesday:
+                      active: true
+                      from: 00:00
+                      to: 24:00
+                    thursday:
+                      active: true
+                      from: 00:00
+                      to: 24:00
+                    friday:
+                      active: true
+                      from: 00:00
+                      to: 24:00
+                    saturday:
+                      active: true
+                      from: 00:00
+                      to: 24:00
+                    sunday:
+                      active: true
+                      from: 00:00
+                      to: 24:00
+                  bandwidth:
+                    settings: network default
+                  firewall_and_traffic_shaping:
+                    settings: custom
+                  content_filtering:
+                    allowed_url_patterns:
+                      settings: network default
+                    blocked_url_patterns:
+                      settings: network default
+                    blocked_url_categories:
+                      settings: network default
+                  vlan_tagging:
+                    settings: network default
+                  bonjour_forwarding:
+                    settings: network default
+              netflow:
+                reporting: false
               settings:
                 local_status_page_enabled: true
-                remote_status_page: true
+                remote_status_page: false
+                secure_port: false
+                named_vlans: false
+                local_status_page_authentication:
+                  enabled: true
+                  username: admin
+              snmp:
+                access: none
+              vlan_profiles:
+                - name: Default Profile
+                  iname: Default
+                  vlan_names:
+                    - name: default
+                      vlan_id: '1'
+            - name: Systems Manager
+              product_types:
+                - systemsManager
+              settings:
+                local_status_page_enabled: true
+                remote_status_page: false
                 secure_port: false
                 local_status_page_authentication:
+                  enabled: true
                   username: admin
-                  password: !env network_password
-                named_vlans: true
-              snmp:
-                access: users
-                # access: community
-                # community_string: publicro
-                users:
-                  - username: cisco
-                    passphrase: !env snmp_password
-              syslog_servers:
-                - host: 1.2.3.4
-                  port: 514
-                  roles:
-                    - Air Marshal events
-                    - Flows
-                    - URLs
-                    - Switch Event log
-                    - Wireless Event log
-                    - Appliance Event log

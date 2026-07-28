@@ -1,0 +1,353 @@
+---
+meraki:
+  domains:
+    - name: DOMAIN_NAME
+      administrator:
+        email: emmsudduth@gmail.com
+      organizations:
+        - name: lsudduth@gmail.com
+          managed: false
+          management:
+            - name: customer number
+              value: '03486604'
+          networks:
+            - name: 142 Mantis
+              product_types:
+                - appliance
+                - camera
+                - sensor
+                - switch
+                - wireless
+              time_zone: America/New_York
+              wireless:
+                alternate_management_interface:
+                  enabled: false
+                bluetooth_settings:
+                  scanning: false
+                  advertising: false
+                settings:
+                  upgrade_strategy: minimizeClientDowntime
+                  led_lights_on: false
+                  meshing: false
+                  ipv6_bridge: true
+                  location_analytics: true
+                  named_vlans_pool_dhcp_monitoring:
+                    enabled: false
+                    duration: 5
+                ssids:
+                  - name: turkey
+                    ssid_number: '0'
+                    enabled: true
+                    auth_mode: psk
+                    encryption_mode: wpa
+                    psk: Security1
+                    wpa_encryption_mode: WPA2 only
+                    dot11w:
+                      enabled: false
+                      required: false
+                    dot11r:
+                      enabled: false
+                      adaptive: false
+                    splash_page: None
+                    ip_assignment_mode: Bridge mode
+                    use_vlan_tagging: true
+                    default_vlan_id: 4
+                    min_bitrate: 11
+                    band_selection: Dual band operation
+                    per_client_bandwidth_limit_up: 0
+                    per_client_bandwidth_limit_down: 0
+                    per_ssid_bandwidth_limit_up: 0
+                    per_ssid_bandwidth_limit_down: 0
+                    visible: true
+                    available_on_all_aps: true
+                    speed_burst: false
+                    named_vlans:
+                      tagging:
+                        enabled: false
+                    lan_isolation: false
+                    mandatory_dhcp: false
+                    bonjour_forwarding:
+                      enabled: true
+                      rules:
+                        - description: 4to5
+                          vlan_id: '5'
+                          services:
+                            - All Services
+                        - description: 4to3
+                          vlan_id: '3'
+                          services:
+                            - All Services
+                      exception: false
+                    device_type_group_policies:
+                      enabled: false
+                    firewall_l3_firewall_rules:
+                      allow_lan_access: true
+                    hotspot20:
+                      enabled: false
+                    unavailability_schedules:
+                      enabled: false
+                      ranges:
+                        - start_day: Sunday
+                          start_time: 00:00:00
+                          end_day: Sunday
+                          end_time: 00:00:00
+                      ranges_in_seconds:
+                        - start: 604800
+                          end: 0
+                    splash_settings:
+                      splash_timeout: 1440
+                      use_splash_url: false
+                      use_redirect_url: false
+                      block_all_traffic_before_sign_on: false
+                      controller_disconnection_behavior: default
+                      allow_simultaneous_logins: true
+                      guest_sponsorship:
+                        guest_can_request_timeframe: false
+                      billing:
+                        free_access:
+                          enabled: false
+                          duration_in_minutes: 20
+                        reply_to_email_address: lsudduth@gmail.com
+                        prepaid_access_fast_login: false
+                      sentry_enrollment:
+                        systems_manager_network: Systems Manager
+                        strength: focused
+                        enforced_systems:
+                          - iOS
+                          - Android
+                      self_registration:
+                        enabled: true
+                        authorization_type: admin
+                    traffic_shaping_rules:
+                      traffic_shaping: true
+                      default_rules: true
+                  - name: beatles
+                    ssid_number: '1'
+                    enabled: true
+                    auth_mode: psk
+                    encryption_mode: wpa
+                    psk: Security2
+                    wpa_encryption_mode: WPA2 only
+                    dot11w:
+                      enabled: false
+                      required: false
+                    dot11r:
+                      enabled: false
+                      adaptive: false
+                    splash_page: None
+                    ip_assignment_mode: Bridge mode
+                    use_vlan_tagging: true
+                    default_vlan_id: 5
+                    min_bitrate: 11
+                    band_selection: Dual band operation
+                    per_client_bandwidth_limit_up: 0
+                    per_client_bandwidth_limit_down: 0
+                    per_ssid_bandwidth_limit_up: 0
+                    per_ssid_bandwidth_limit_down: 0
+                    visible: true
+                    available_on_all_aps: true
+                    speed_burst: false
+                    named_vlans:
+                      tagging:
+                        enabled: false
+                    lan_isolation: false
+                    mandatory_dhcp: false
+                    bonjour_forwarding:
+                      enabled: true
+                      rules:
+                        - description: 5to4
+                          vlan_id: '4'
+                          services:
+                            - All Services
+                        - description: 5to3
+                          vlan_id: '3'
+                          services:
+                            - All Services
+                      exception: false
+                    device_type_group_policies:
+                      enabled: false
+                    firewall_l3_firewall_rules:
+                      allow_lan_access: true
+                    hotspot20:
+                      enabled: false
+                    unavailability_schedules:
+                      enabled: false
+                    splash_settings:
+                      splash_timeout: 1440
+                      use_splash_url: false
+                      use_redirect_url: false
+                      welcome_message: Welcome to Guest Access
+                      theme_name: 6961b3f08ec7dcb6eaa3fb0814e4722e4a83b6b8
+                      block_all_traffic_before_sign_on: true
+                      controller_disconnection_behavior: default
+                      allow_simultaneous_logins: true
+                      guest_sponsorship:
+                        guest_can_request_timeframe: false
+                      billing:
+                        free_access:
+                          enabled: false
+                          duration_in_minutes: 20
+                        reply_to_email_address: lsudduth@gmail.com
+                        prepaid_access_fast_login: false
+                      sentry_enrollment:
+                        systems_manager_network: Systems Manager
+                        strength: focused
+                        enforced_systems:
+                          - iOS
+                          - Android
+                      self_registration:
+                        enabled: true
+                        authorization_type: admin
+                    traffic_shaping_rules:
+                      traffic_shaping: true
+                      default_rules: true
+                  - name: legacy
+                    ssid_number: '2'
+                    enabled: true
+                    auth_mode: psk
+                    encryption_mode: wpa
+                    psk: Security3
+                    wpa_encryption_mode: WPA2 only
+                    dot11w:
+                      enabled: false
+                      required: false
+                    dot11r:
+                      enabled: false
+                      adaptive: false
+                    splash_page: None
+                    ip_assignment_mode: Bridge mode
+                    use_vlan_tagging: true
+                    default_vlan_id: 3
+                    min_bitrate: 11
+                    band_selection: Dual band operation
+                    per_client_bandwidth_limit_up: 0
+                    per_client_bandwidth_limit_down: 0
+                    per_ssid_bandwidth_limit_up: 0
+                    per_ssid_bandwidth_limit_down: 0
+                    visible: true
+                    available_on_all_aps: true
+                    speed_burst: false
+                    named_vlans:
+                      tagging:
+                        enabled: false
+                    lan_isolation: false
+                    mandatory_dhcp: false
+                    bonjour_forwarding:
+                      enabled: true
+                      rules:
+                        - description: 3to4
+                          vlan_id: '4'
+                          services:
+                            - All Services
+                        - description: 3to5
+                          vlan_id: '5'
+                          services:
+                            - All Services
+                      exception: false
+                    device_type_group_policies:
+                      enabled: false
+                    firewall_l3_firewall_rules:
+                      allow_lan_access: true
+                    hotspot20:
+                      enabled: false
+                    unavailability_schedules:
+                      enabled: false
+                    splash_settings:
+                      splash_timeout: 1440
+                      use_splash_url: false
+                      use_redirect_url: false
+                      block_all_traffic_before_sign_on: false
+                      controller_disconnection_behavior: default
+                      allow_simultaneous_logins: true
+                      guest_sponsorship:
+                        guest_can_request_timeframe: false
+                      billing:
+                        free_access:
+                          enabled: false
+                          duration_in_minutes: 20
+                        reply_to_email_address: lsudduth@gmail.com
+                        prepaid_access_fast_login: false
+                      sentry_enrollment:
+                        systems_manager_network: Systems Manager
+                        strength: focused
+                        enforced_systems:
+                          - iOS
+                          - Android
+                      self_registration:
+                        enabled: true
+                        authorization_type: admin
+                    traffic_shaping_rules:
+                      traffic_shaping: true
+                      default_rules: true
+                  - name: native
+                    ssid_number: '3'
+                    enabled: false
+                    auth_mode: psk
+                    encryption_mode: wpa
+                    psk: Security2
+                    wpa_encryption_mode: WPA2 only
+                    dot11w:
+                      enabled: false
+                      required: false
+                    dot11r:
+                      enabled: false
+                      adaptive: false
+                    splash_page: None
+                    ip_assignment_mode: Bridge mode
+                    use_vlan_tagging: false
+                    min_bitrate: 11
+                    band_selection: Dual band operation
+                    per_client_bandwidth_limit_up: 0
+                    per_client_bandwidth_limit_down: 0
+                    per_ssid_bandwidth_limit_up: 0
+                    per_ssid_bandwidth_limit_down: 0
+                    visible: true
+                    available_on_all_aps: true
+                    speed_burst: false
+                    named_vlans:
+                      tagging:
+                        enabled: false
+                    lan_isolation: false
+                    mandatory_dhcp: false
+                    bonjour_forwarding:
+                      enabled: false
+                      exception: false
+                    device_type_group_policies:
+                      enabled: false
+                    firewall_l3_firewall_rules:
+                      allow_lan_access: true
+                    hotspot20:
+                      enabled: false
+                    unavailability_schedules:
+                      enabled: false
+                    splash_settings:
+                      splash_timeout: 1440
+                      use_splash_url: false
+                      use_redirect_url: false
+                      block_all_traffic_before_sign_on: false
+                      controller_disconnection_behavior: default
+                      allow_simultaneous_logins: true
+                      guest_sponsorship:
+                        guest_can_request_timeframe: false
+                      billing:
+                        free_access:
+                          enabled: false
+                          duration_in_minutes: 20
+                        reply_to_email_address: lsudduth@gmail.com
+                        prepaid_access_fast_login: false
+                      sentry_enrollment:
+                        systems_manager_network: Systems Manager
+                        strength: focused
+                        enforced_systems:
+                          - iOS
+                          - Android
+                      self_registration:
+                        enabled: true
+                        authorization_type: admin
+                    traffic_shaping_rules:
+                      traffic_shaping: true
+                      default_rules: true
+            - name: Systems Manager
+              product_types:
+                - systemsManager
+              time_zone: America/New_York

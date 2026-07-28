@@ -1,0 +1,2345 @@
+meraki:
+  domains:
+  - name: DOMAIN_NAME
+    administrator:
+      email: emmsudduth@gmail.com
+    organizations:
+    - name: lsudduth@gmail.com
+      managed: false
+      networks:
+      - name: 142 Mantis
+        product_types:
+        - appliance
+        - camera
+        - sensor
+        - switch
+        - wireless
+        devices:
+        - serial: Q2JD-BN8D-48YJ
+          name: 1st Floor - AP
+          lat: 35.7464999
+          lng: -79.10909459999999
+          address: '142 Mantis
+
+            Pittsboro, NC 27312'
+          management_interface:
+            wan1:
+              using_static_ip: false
+        - serial: Q2JD-UPWR-A7L2
+          name: Garage - AP
+          lat: 35.7464999
+          lng: -79.10909459999999
+          address: '142 Mantis
+
+            Pittsboro, NC 27312'
+          management_interface:
+            wan1:
+              using_static_ip: false
+        - serial: Q2JV-8EJZ-XQEX
+          name: Front Gate
+          lat: 35.74564149258025
+          lng: -79.10983443260194
+          notes: '
+
+            Front Gate'
+        - serial: Q2KP-TYDT-Q4SS
+          name: Server Room
+          lat: 35.746676
+          lng: -79.10935899999998
+          address: "142 Mantis\r\nPittsboro, NC. 27312"
+          management_interface:
+            wan1:
+              using_static_ip: false
+          switch:
+            ports:
+            - port_id_ranges:
+              - from: '1'
+                to: '1'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 5
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '2'
+                to: '2'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Beatles_N_658088495549527368
+                name: Beatles
+            - port_id_ranges:
+              - from: '3'
+                to: '3'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 5
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '4'
+                to: '4'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 5
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Beatles_N_658088495549527368
+                name: Beatles
+            - port_id_ranges:
+              - from: '5'
+                to: '5'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 4
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Beatles_N_658088495549527368
+                name: Beatles
+            - port_id_ranges:
+              - from: '6'
+                to: '6'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Office_N_658088495549527368
+                name: Office
+            - port_id_ranges:
+              - from: '7'
+                to: '7'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '8'
+                to: '8'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 3
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '9'
+                to: '9'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '10'
+                to: '10'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 4
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Office_N_658088495549527368
+                name: Office
+            - port_id_ranges:
+              - from: '11'
+                to: '11'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '12'
+                to: '12'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Office_N_658088495549527368
+                name: Office
+            - port_id_ranges:
+              - from: '13'
+                to: '13'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '14'
+                to: '14'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '15'
+                to: '15'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '16'
+                to: '16'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '17'
+                to: '17'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Office_N_658088495549527368
+                name: Office
+            - port_id_ranges:
+              - from: '18'
+                to: '18'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Office_N_658088495549527368
+                name: Office
+            - port_id_ranges:
+              - from: '19'
+                to: '19'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 5
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '20'
+                to: '20'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '21'
+                to: '21'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Beatles_N_658088495549527368
+                name: Beatles
+            - port_id_ranges:
+              - from: '22'
+                to: '22'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Office_N_658088495549527368
+                name: Office
+            - port_id_ranges:
+              - from: '23'
+                to: '23'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '24'
+                to: '24'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+        - serial: Q2KP-WJS2-XUCV
+          name: Crawl Space
+          lat: 35.7465
+          lng: -79.10909
+          address: '142 Mantis
+
+            Pittsboro, NC 27312'
+          management_interface:
+            wan1:
+              using_static_ip: false
+          switch:
+            ports:
+            - port_id_ranges:
+              - from: '1'
+                to: '1'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '2'
+                to: '2'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '3'
+                to: '3'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '4'
+                to: '4'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '5'
+                to: '5'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '6'
+                to: '6'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '7'
+                to: '7'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '8'
+                to: '8'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: 100 Megabit full duplex (forced)
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '9'
+                to: '9'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '10'
+                to: '10'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '11'
+                to: '11'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '12'
+                to: '12'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '13'
+                to: '13'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '14'
+                to: '14'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '15'
+                to: '15'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '16'
+                to: '16'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '17'
+                to: '17'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '18'
+                to: '18'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '19'
+                to: '19'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '20'
+                to: '20'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '21'
+                to: '21'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '22'
+                to: '22'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '23'
+                to: '23'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '24'
+                to: '24'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              dai_trusted: false
+              profile:
+                enabled: false
+        - serial: Q2YD-QDFX-TZAT
+          name: Back Porch - AP
+          lat: 35.7465
+          lng: -79.10914
+          address: 142 Mantis
+          management_interface:
+            wan1:
+              using_static_ip: false
+        - serial: Q2YN-G2WJ-2BHX
+          name: MX85
+          tags:
+          - recently-added
+          lat: 35.7465
+          lng: -79.10909
+          address: 142 Mantis, Pittsboro, NC, 27312
+          appliance:
+            uplinks_settings:
+              wan1:
+                enabled: true
+                vlan_tagging:
+                  enabled: false
+                svis:
+                  ipv4:
+                    assignment_mode: dynamic
+                  ipv6:
+                    assignment_mode: dynamic
+                pppoe:
+                  enabled: false
+              wan2:
+                enabled: false
+                vlan_tagging:
+                  enabled: false
+                svis:
+                  ipv4:
+                    assignment_mode: dynamic
+                  ipv6:
+                    assignment_mode: dynamic
+                pppoe:
+                  enabled: false
+          management_interface:
+            wan1:
+              wan: enabled
+              using_static_ip: false
+            wan2:
+              wan: disabled
+              using_static_ip: false
+        - serial: Q3AJ-355Y-W5TT
+          name: Master Bedroom - AP
+          lat: 37.4180951010362
+          lng: -122.098531723022
+          management_interface:
+            wan1:
+              using_static_ip: false
+        - serial: Q3AJ-N8NU-8L2K
+          name: Bedroom - AP
+          lat: 37.4180951010362
+          lng: -122.098531723022
+          management_interface:
+            wan1:
+              using_static_ip: false
+        - serial: Q3AJ-YZ65-2CPX
+          name: Office AP
+          lat: 37.4180951010362
+          lng: -122.098531723022
+          management_interface:
+            wan1:
+              using_static_ip: false
+        - serial: Q3CA-TWK7-HDVN
+          name: Office Sensor
+          lat: 37.4180951010362
+          lng: -122.098531723022
+          management_interface:
+            wan1:
+              using_static_ip: false
+        - serial: Q3DD-QCD5-25YL
+          name: Garage
+          tags:
+          - recently-added
+          lat: 35.7465
+          lng: -79.10909
+          address: 142 Mantis, Pittsboro, NC, 27312
+          management_interface:
+            wan1:
+              using_static_ip: false
+          switch:
+            ports:
+            - port_id_ranges:
+              - from: '1'
+                to: '1'
+              name: VLAN 1 Uplink
+              enabled: true
+              poe: true
+              type: access
+              vlan: 1
+              allowed_vlans: '1'
+              isolation: false
+              rstp: false
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '2'
+                to: '2'
+              name: VLAN 2 Uplink
+              enabled: true
+              poe: true
+              type: access
+              vlan: 2
+              allowed_vlans: '2'
+              isolation: false
+              rstp: false
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '3'
+                to: '3'
+              name: VLAN 3 Uplink
+              enabled: true
+              poe: true
+              type: access
+              vlan: 3
+              allowed_vlans: '3'
+              isolation: false
+              rstp: false
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '4'
+                to: '4'
+              name: VLAN 4 Uplink
+              enabled: true
+              poe: true
+              type: access
+              vlan: 4
+              allowed_vlans: '4'
+              isolation: false
+              rstp: false
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '5'
+                to: '5'
+              name: VLAN 5 Uplink
+              enabled: true
+              poe: true
+              type: access
+              vlan: 5
+              allowed_vlans: '5'
+              isolation: false
+              rstp: false
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '6'
+                to: '6'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '7'
+                to: '7'
+              name: Crawl Space Link
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '8'
+                to: '8'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '9'
+                to: '9'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '10'
+                to: '10'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '11'
+                to: '11'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 5
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '12'
+                to: '12'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '13'
+                to: '13'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '14'
+                to: '14'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '15'
+                to: '15'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '16'
+                to: '16'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 3
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '17'
+                to: '17'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 5
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '18'
+                to: '18'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '19'
+                to: '19'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 5
+              allowed_vlans: all
+              isolation: false
+              rstp: false
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '20'
+                to: '20'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '21'
+                to: '21'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '22'
+                to: '22'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '23'
+                to: '23'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 5
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '24'
+                to: '24'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '25'
+                to: '25'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 5
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '26'
+                to: '26'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 4
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '27'
+                to: '27'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 5
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '28'
+                to: '28'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 5
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '29'
+                to: '29'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '30'
+                to: '30'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '31'
+                to: '31'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Beatles_N_658088495549527368
+                name: Beatles
+            - port_id_ranges:
+              - from: '32'
+                to: '32'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Beatles_N_658088495549527368
+                name: Beatles
+            - port_id_ranges:
+              - from: '33'
+                to: '33'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Beatles_N_658088495549527368
+                name: Beatles
+            - port_id_ranges:
+              - from: '34'
+                to: '34'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Beatles_N_658088495549527368
+                name: Beatles
+            - port_id_ranges:
+              - from: '35'
+                to: '35'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Beatles_N_658088495549527368
+                name: Beatles
+            - port_id_ranges:
+              - from: '36'
+                to: '36'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Beatles_N_658088495549527368
+                name: Beatles
+            - port_id_ranges:
+              - from: '37'
+                to: '37'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Beatles_N_658088495549527368
+                name: Beatles
+            - port_id_ranges:
+              - from: '38'
+                to: '38'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Beatles_N_658088495549527368
+                name: Beatles
+            - port_id_ranges:
+              - from: '39'
+                to: '39'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Beatles_N_658088495549527368
+                name: Beatles
+            - port_id_ranges:
+              - from: '40'
+                to: '40'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 5
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '41'
+                to: '41'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '42'
+                to: '42'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 5
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '43'
+                to: '43'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 5
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '44'
+                to: '44'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 5
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '45'
+                to: '45'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: 1 Gigabit full duplex (forced)
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '46'
+                to: '46'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 5
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '47'
+                to: '47'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '48'
+                to: '48'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '49'
+                to: '49'
+              enabled: true
+              poe: false
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '50'
+                to: '50'
+              enabled: true
+              poe: false
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '51'
+                to: '51'
+              enabled: true
+              poe: false
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '52'
+                to: '52'
+              enabled: true
+              poe: false
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+        - serial: Q4AC-VFHK-PNYD
+          name: Office
+          lat: 37.4180951010362
+          lng: -122.098531723022
+          management_interface:
+            wan1:
+              using_static_ip: false
+          switch:
+            ports:
+            - port_id_ranges:
+              - from: '1'
+                to: '1'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '2'
+                to: '2'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Beatles_N_658088495549527368
+                name: Beatles
+            - port_id_ranges:
+              - from: '3'
+                to: '3'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '4'
+                to: '4'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 2
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '5'
+                to: '5'
+              enabled: true
+              poe: true
+              type: access
+              vlan: 5
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '6'
+                to: '6'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '7'
+                to: '7'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '8'
+                to: '8'
+              enabled: true
+              poe: true
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '9'
+                to: '9'
+              enabled: true
+              poe: false
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '10'
+                to: '10'
+              enabled: true
+              poe: false
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+        - serial: Q4CA-HL5D-6V36
+          name: Servers
+          lat: 37.4180951010362
+          lng: -122.098531723022
+          management_interface:
+            wan1:
+              using_static_ip: false
+          switch:
+            ports:
+            - port_id_ranges:
+              - from: '1'
+                to: '1'
+              enabled: true
+              poe: false
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Office_N_658088495549527368
+                name: Office
+            - port_id_ranges:
+              - from: '2'
+                to: '2'
+              enabled: true
+              poe: false
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Office_N_658088495549527368
+                name: Office
+            - port_id_ranges:
+              - from: '3'
+                to: '3'
+              enabled: true
+              poe: false
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Office_N_658088495549527368
+                name: Office
+            - port_id_ranges:
+              - from: '4'
+                to: '4'
+              enabled: true
+              poe: false
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Office_N_658088495549527368
+                name: Office
+            - port_id_ranges:
+              - from: '5'
+                to: '5'
+              enabled: true
+              poe: false
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Office_N_658088495549527368
+                name: Office
+            - port_id_ranges:
+              - from: '6'
+                to: '6'
+              enabled: true
+              poe: false
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Office_N_658088495549527368
+                name: Office
+            - port_id_ranges:
+              - from: '7'
+                to: '7'
+              enabled: true
+              poe: false
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+                iname: Office_N_658088495549527368
+                name: Office
+            - port_id_ranges:
+              - from: '8'
+                to: '8'
+              enabled: true
+              poe: false
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '9'
+                to: '9'
+              enabled: true
+              poe: false
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+            - port_id_ranges:
+              - from: '10'
+                to: '10'
+              enabled: true
+              poe: false
+              type: trunk
+              vlan: 1
+              allowed_vlans: all
+              isolation: false
+              rstp: true
+              stp_guard: disabled
+              link_negotiation: Auto negotiate
+              udld: Alert only
+              access_policy_type: Open
+              storm_control: true
+              dai_trusted: false
+              profile:
+                enabled: false
+      - name: Systems Manager
+        product_types:
+        - systemsManager

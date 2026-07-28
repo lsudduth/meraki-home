@@ -1,0 +1,90 @@
+---
+meraki:
+  domains:
+    - name: DOMAIN_NAME
+      administrator:
+        email: emmsudduth@gmail.com
+      organizations:
+        - name: lsudduth@gmail.com
+          managed: false
+          networks:
+            - name: 142 Mantis
+              product_types:
+                - appliance
+                - camera
+                - sensor
+                - switch
+                - wireless
+              switch:
+                dhcp_server_policy:
+                  default_policy: allow
+                  arp_inspection: false
+                  alerts_email: true
+                dscp_to_cos_mappings:
+                  - dscp: 0
+                    cos: 0
+                    title: default
+                  - dscp: 10
+                    cos: 0
+                    title: AF11
+                  - dscp: 18
+                    cos: 1
+                    title: AF21
+                  - dscp: 26
+                    cos: 2
+                    title: AF31
+                  - dscp: 34
+                    cos: 3
+                    title: AF41
+                  - dscp: 46
+                    cos: 3
+                    title: EF voice
+                mtu:
+                  default_mtu_size: 9578
+                qos_rules:
+                  - qos_rule_name: '800514833765119267'
+                    vlan: 1
+                    protocol: UDP
+                    dscp: 46
+                    source_port_range: 1-65535
+                    destination_port: 4500
+                  - qos_rule_name: '800514833765119268'
+                    vlan: 1
+                    protocol: UDP
+                    dscp: 46
+                    source_port_range: 1-65535
+                    destination_port: 500
+                routing_multicast:
+                  default_settings:
+                    igmp_snooping: true
+                    flood_unknown_multicast_traffic: true
+                routing_ospf:
+                  enabled: false
+                  hello_timer_in_seconds: 10
+                  dead_timer_in_seconds: 40
+                  v3:
+                    enabled: false
+                    hello_timer_in_seconds: 10
+                    dead_timer_in_seconds: 40
+                  md5_authentication: false
+                settings:
+                  vlan: 1
+                  use_combined_power: false
+                  uplink_client_sampling: false
+                  mac_blocklist: false
+                storm_control:
+                  broadcast_threshold: 10
+                  multicast_threshold: 11
+                  unknown_unicast_threshold: 10
+                stp:
+                  rstp: true
+                  stp_bridge_priority:
+                    - switches:
+                        - Garage
+                      stp_priority: 0
+                    - switches:
+                        - Server Room
+                        - Crawl Space
+                        - Office
+                        - Servers
+                      stp_priority: 32768

@@ -1,0 +1,327 @@
+---
+meraki:
+  domains:
+    - name: DOMAIN_NAME
+      administrator:
+        email: emmsudduth@gmail.com
+      organizations:
+        - name: lsudduth@gmail.com
+          managed: false
+          management:
+            - name: customer number
+              value: '03486604'
+          networks:
+            - name: 142 Mantis
+              product_types:
+                - appliance
+                - camera
+                - sensor
+                - switch
+                - wireless
+              time_zone: America/New_York
+              appliance:
+                connectivity_monitoring_destinations:
+                  - ip: 8.8.8.8
+                    description: Google
+                    default: true
+                  - ip: 2620:12f:c00c::a
+                    description: v6.icmp.canireachthe.net
+                    default: false
+                content_filtering:
+                  allowed_url_patterns:
+                    - hkdata.crabdance.com
+                    - hkdata.fairuse.org
+                  blocked_url_categories:
+                    - meraki:contentFiltering/category/T05
+                    - meraki:contentFiltering/category/T04
+                    - meraki:contentFiltering/category/T02
+                    - meraki:contentFiltering/category/T03
+                    - meraki:contentFiltering/category/T01
+                    - meraki:contentFiltering/category/T06
+                    - meraki:contentFiltering/category/T09
+                    - meraki:contentFiltering/category/T08
+                    - meraki:contentFiltering/category/T11
+                    - meraki:contentFiltering/category/T12
+                    - meraki:contentFiltering/category/T21
+                    - meraki:contentFiltering/category/T23
+                    - meraki:contentFiltering/category/T13
+                traffic_shaping:
+                  global_bandwidth_limits:
+                    limit_up: 0
+                    limit_down: 0
+                  rules:
+                    default_rules: true
+                  uplink_bandwidth_limits:
+                    wan1:
+                      limit_up: 1000000
+                      limit_down: 1000000
+                    wan2:
+                      limit_up: 1000000
+                      limit_down: 1000000
+                  uplink_selection:
+                    default_uplink: wan1
+                    load_balancing: false
+                    failover_and_failback_immediate: false
+                firewall:
+                  settings_spoofing_protection_ip_source_guard_mode: block
+                  firewalled_services:
+                    - service_name: ICMP
+                      access: unrestricted
+                    - service_name: web
+                      access: blocked
+                  inbound_firewall_rules:
+                    rules: []
+                  port_forwarding_rules:
+                    - name: ucsc220-1
+                      lan_ip: 192.168.2.19
+                      uplink: both
+                      public_port: '2219'
+                      local_port: '22'
+                      allowed_ips:
+                        - any
+                      protocol: tcp
+                    - name: Bitcoin
+                      lan_ip: 192.168.2.19
+                      uplink: both
+                      public_port: '8333'
+                      local_port: '8333'
+                      allowed_ips:
+                        - any
+                      protocol: tcp
+                    - name: ssh
+                      lan_ip: 192.168.2.23
+                      uplink: both
+                      public_port: '2223'
+                      local_port: '22'
+                      allowed_ips:
+                        - any
+                      protocol: tcp
+                    - name: macmini
+                      lan_ip: 192.168.2.27
+                      uplink: both
+                      public_port: '2227'
+                      local_port: '22'
+                      allowed_ips:
+                        - any
+                      protocol: tcp
+                    - name: DVR
+                      lan_ip: 192.168.2.38
+                      uplink: both
+                      public_port: '2238'
+                      local_port: '22'
+                      allowed_ips:
+                        - any
+                      protocol: tcp
+                    - name: MyChannels
+                      lan_ip: 192.168.5.227
+                      uplink: both
+                      public_port: '8089'
+                      local_port: '8089'
+                      allowed_ips:
+                        - any
+                      protocol: tcp
+                ports:
+                  - port_id_ranges:
+                      - from: '5'
+                        to: '5'
+                    enabled: true
+                    drop_untagged_traffic: false
+                    type: trunk
+                    vlan: 1
+                    allowed_vlans: all
+                  - port_id_ranges:
+                      - from: '6'
+                        to: '6'
+                    enabled: true
+                    drop_untagged_traffic: false
+                    type: trunk
+                    vlan: 1
+                    allowed_vlans: all
+                  - port_id_ranges:
+                      - from: '7'
+                        to: '7'
+                    enabled: true
+                    drop_untagged_traffic: false
+                    type: access
+                    vlan: 1
+                    access_policy: open
+                  - port_id_ranges:
+                      - from: '8'
+                        to: '8'
+                    enabled: true
+                    drop_untagged_traffic: false
+                    type: access
+                    vlan: 2
+                    access_policy: open
+                  - port_id_ranges:
+                      - from: '9'
+                        to: '9'
+                    enabled: true
+                    drop_untagged_traffic: false
+                    type: access
+                    vlan: 3
+                    access_policy: open
+                  - port_id_ranges:
+                      - from: '10'
+                        to: '10'
+                    enabled: true
+                    drop_untagged_traffic: false
+                    type: access
+                    vlan: 4
+                    access_policy: open
+                  - port_id_ranges:
+                      - from: '11'
+                        to: '11'
+                    enabled: true
+                    drop_untagged_traffic: false
+                    type: access
+                    vlan: 5
+                    access_policy: open
+                  - port_id_ranges:
+                      - from: '12'
+                        to: '12'
+                    enabled: true
+                    drop_untagged_traffic: false
+                    type: trunk
+                    vlan: 1
+                    allowed_vlans: all
+                  - port_id_ranges:
+                      - from: '13'
+                        to: '13'
+                    enabled: true
+                    drop_untagged_traffic: false
+                    type: trunk
+                    vlan: 1
+                    allowed_vlans: all
+                  - port_id_ranges:
+                      - from: '14'
+                        to: '14'
+                    enabled: true
+                    drop_untagged_traffic: false
+                    type: trunk
+                    vlan: 1
+                    allowed_vlans: all
+                security_intrusion:
+                  mode: prevention
+                  ids_rulesets: balanced
+                security_malware:
+                  mode: enabled
+                  allowed_urls:
+                    - url: hkdata.crabdance.com
+                      comment: For MakeMKV
+                    - url: hkdata.fairuse.org
+                      comment: For MakeMKV
+                settings:
+                  client_tracking_method: MAC address
+                  deployment_mode: routed
+                  dynamic_dns:
+                    enabled: true
+                    prefix: mx64
+                vlans:
+                  - name: Default
+                    vlan_id: '1'
+                    subnet: 192.168.0.0/24
+                    appliance_ip: 192.168.0.1
+                    dns_nameservers: opendns
+                    dhcp_handling: Run a DHCP server
+                    dhcp_lease_time: 1 week
+                    dhcp_boot_options: false
+                    fixed_ip_assignments:
+                      - name: device-default-1
+                        ip: 192.168.0.101
+                        mac: 00:81:c4:81:4c:c0
+                      - name: device-default-2
+                        ip: 192.168.0.252
+                        mac: c4:ea:1d:cc:55:d7
+                      - name: device-default-3
+                        ip: 192.168.0.253
+                        mac: c4:ea:1d:d0:99:87
+                    mandatory_dhcp: false
+                  - name: Office
+                    vlan_id: '2'
+                    subnet: 192.168.2.0/24
+                    appliance_ip: 192.168.2.1
+                    dns_nameservers: opendns
+                    dhcp_handling: Run a DHCP server
+                    dhcp_lease_time: 1 week
+                    dhcp_boot_options: false
+                    fixed_ip_assignments:
+                      - name: device-office-1
+                        ip: 192.168.2.44
+                        mac: 00:1e:e5:04:1d:e9
+                      - name: hp-server-2
+                        ip: 192.168.2.22
+                        mac: 88:51:fb:58:83:03
+                      - name: device-office-2
+                        ip: 192.168.2.24
+                        mac: 98:90:96:9a:f4:c0
+                      - name: hp-server-1
+                        ip: 192.168.2.25
+                        mac: b4:b5:2f:d7:19:bb
+                      - name: device-office-3
+                        ip: 192.168.2.19
+                        mac: d4:6d:50:cf:01:3e
+                      - name: device-office-4
+                        ip: 192.168.2.33
+                        mac: dc:4a:3e:6e:16:65
+                      - name: device-office-5
+                        ip: 192.168.2.32
+                        mac: dc:a6:32:6c:26:9f
+                      - name: device-office-6
+                        ip: 192.168.2.29
+                        mac: e4:5f:01:43:7e:27
+                    mandatory_dhcp: false
+                  - name: IoT
+                    vlan_id: '3'
+                    subnet: 192.168.3.0/24
+                    appliance_ip: 192.168.3.1
+                    dns_nameservers: opendns
+                    dhcp_handling: Run a DHCP server
+                    dhcp_lease_time: 1 week
+                    dhcp_boot_options: false
+                    mandatory_dhcp: false
+                  - name: Turkey
+                    vlan_id: '4'
+                    subnet: 192.168.4.0/24
+                    appliance_ip: 192.168.4.1
+                    dns_nameservers: opendns
+                    dhcp_handling: Run a DHCP server
+                    dhcp_lease_time: 1 week
+                    dhcp_boot_options: false
+                    mandatory_dhcp: false
+                  - name: Beatles
+                    vlan_id: '5'
+                    subnet: 192.168.5.0/24
+                    appliance_ip: 192.168.5.1
+                    dns_nameservers: opendns
+                    dhcp_handling: Run a DHCP server
+                    dhcp_lease_time: 1 week
+                    dhcp_boot_options: false
+                    fixed_ip_assignments:
+                      - name: device-beatles-1
+                        ip: 192.168.5.186
+                        mac: 00:18:dd:31:8b:1b
+                      - name: device-beatles-2
+                        ip: 192.168.5.191
+                        mac: 00:18:dd:31:a5:d5
+                      - name: device-beatles-3
+                        ip: 192.168.5.244
+                        mac: 00:50:56:36:72:e9
+                      - name: device-beatles-4
+                        ip: 192.168.5.183
+                        mac: 18:03:73:d1:d5:5c
+                      - name: device-beatles-5
+                        ip: 192.168.5.133
+                        mac: 74:ac:b9:73:01:65
+                      - name: device-beatles-6
+                        ip: 192.168.5.188
+                        mac: c6:3c:64:c4:b4:31
+                    mandatory_dhcp: false
+                vpn_site_to_site_vpn:
+                  mode: none
+                warm_spare:
+                  enabled: false
+            - name: Systems Manager
+              product_types:
+                - systemsManager
+              time_zone: America/New_York
