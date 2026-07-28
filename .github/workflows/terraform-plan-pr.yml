@@ -1,0 +1,107 @@
+name: Terraform Plan (Pull Request)
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/**'
+      - 'variables.tf'
+      - 'main.tf'
+      - 'backend.tf'
+      - '.github/workflows/terraform-plan-pr.yml'
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    env:
+      TF_VAR_meraki_api_key: ${{ secrets.MERAKIAPIKEY }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_REGION: ${{ secrets.AWS_REGION }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: latest
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Terraform Format Check
+        run: terraform fmt -check -recursive
+
+      - name: Terraform Init
+        run: |
+          terraform init \
+            -backend-config="bucket=${{ secrets.S3_BUCKET }}" \
+            -backend-config="region=${{ secrets.AWS_REGION }}"
+
+      - name: Terraform Validate
+        run: terraform validate
+
+      - name: Terraform Plan
+        id: plan
+        run: |
+          terraform plan -no-color -out=tfplan 2>&1 | tee plan_output.txt
+          terraform show -json tfplan > tfplan.json
+
+      - name: Comment PR with Plan
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let planOutput = '';
+            try {
+              planOutput = fs.readFileSync('plan_output.txt', 'utf8');
+            } catch (e) {
+              planOutput = 'Plan output not available';
+            }
+
+            let resourceCount = 0;
+            try {
+              const planJson = JSON.parse(fs.readFileSync('tfplan.json', 'utf8'));
+              resourceCount = planJson.resource_changes ? planJson.resource_changes.length : 0;
+            } catch (e) {
+              resourceCount = 0;
+            }
+
+            const comment = `## Terraform Plan
+
+            \`\`\`
+            ${planOutput.substring(0, 2000)}
+            \`\`\`
+
+            **Resources to be changed:** ${resourceCount}
+
+            Plan file: [Download tfplan](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            `;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+
+      - name: Upload Plan Artifact
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: tfplan
+          path: tfplan
+          retention-days: 7
+
+      - name: Check Plan Status
+        if: failure()
+        run: |
+          echo "::error::Terraform plan validation failed"
+          exit 1
